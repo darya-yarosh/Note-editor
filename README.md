@@ -1,5 +1,9 @@
 # Training project: Note Editor
 
+## Netlify DEMO
+
+https://yds-notes-app.netlify.app
+
 ## Description
 
 Develop a single page application in React: a text editor for notes with tags.
