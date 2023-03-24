@@ -1,0 +1,55 @@
+@keyframes jump-right {
+  0% {
+    left: -800px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes jump-left {
+  0% {
+    right: -800px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes fade-in-down {
+  0% {
+    top: -500px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    top: 600px;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,23 @@
+.tag-list {
+  &-section {
+    h1 {
+      margin: 0 auto;
+      padding: 0;
+    }
+    .tag-list {
+      justify-content: center;
+    }
+  }
+  &-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    gap: 12px;
+    margin: 16px auto;
+  }
+  p {
+    white-space: pre-wrap;
+  }
+}

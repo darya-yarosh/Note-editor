@@ -1,0 +1,40 @@
+.nav-tools {
+  & ul {
+    display: flex;
+    justify-content: center;
+    color: var(--primary-text-color);
+    list-style-type: none;
+    text-transform: uppercase;
+    margin: 16px auto;
+    padding: 0px;
+  }
+
+  & li {
+    display: inline;
+    --spacing: 12px;
+
+    &:not(:first-of-type) {
+      margin-left: var(--spacing);
+
+      &::before {
+        display: inline-block;
+        opacity: 0.75;
+        margin-right: var(--spacing);
+
+        content: "";
+        transform: rotate(15deg);
+        border-right: 1px solid;
+        height: 0.8em;
+      }
+    }
+
+    & > span {
+      color: var(--primary-text-color);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--primary-text-color-hover);
+      }
+    }
+  }
+}

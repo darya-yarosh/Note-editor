@@ -1,0 +1,12 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 90%;
+  margin: 32px auto 16px auto;
+
+  .app-name {
+    margin: 0px 16px;
+  }
+}

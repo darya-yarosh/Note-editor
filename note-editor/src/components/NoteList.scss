@@ -1,0 +1,14 @@
+.note-list {
+  margin-top: 16px;
+  h1 {
+    margin: 0 auto;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .search-result {
+    border-top: 1px groove;
+    border-bottom: 1px groove;
+  }
+}
