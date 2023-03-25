@@ -19,19 +19,19 @@ interface NoteCardProps {
     onRemoveNoteTag: (note: Note, tag: Tag) => void;
 }
 
-function getFormattedNoteContent(noteContent: string): JSX.Element[] {
-    const formattedNoteContent: JSX.Element[] = [];
+function getTextWithHighlightedTags(text: string): JSX.Element[] {
+    const formattedText: JSX.Element[] = [];
 
-    noteContent.split(` `).forEach(word => {
+    text.split(` `).forEach(word => {
         if (isTag(word)) {
-            formattedNoteContent.push(<strong className="note-card-content-tag">{word}</strong>);
+            formattedText.push(<strong className="note-card-content-tag">{word}</strong>);
         } else {
-            formattedNoteContent.push(<>{word}</>);
+            formattedText.push(<>{word}</>);
         }
-        formattedNoteContent.push(<>&nbsp;</>);
+        formattedText.push(<>&nbsp;</>);
     });
 
-    return formattedNoteContent.map((element, index) => <Fragment key={index}>{element}</Fragment>);
+    return formattedText.map((element, index) => <Fragment key={index}>{element}</Fragment>);
 }
 
 export default function NoteCard({
@@ -40,7 +40,8 @@ export default function NoteCard({
     onRemoveNote,
     onRemoveNoteTag,
 }: NoteCardProps) {
-    const noteContentElement: JSX.Element[] = getFormattedNoteContent(note.content);
+    const noteTitleElement: JSX.Element[] = getTextWithHighlightedTags(note.title);
+    const noteContentElement: JSX.Element[] = getTextWithHighlightedTags(note.content);
     const noteTagList = getNoteTagList(note);
 
     function onRemoveNoteTagClick(tag: Tag) {
@@ -50,7 +51,9 @@ export default function NoteCard({
     return (
         <div className="note-card">
             {note.title.length > 0 &&
-                <h1 className="note-card-title">{note.title}</h1>
+                <h1 className="note-card-title">
+                    {noteTitleElement}
+                </h1>
             }
             {note.content.length > 0 &&
                 <p className="note-card-content">
