@@ -15,9 +15,20 @@ export function updateNote(noteList: Note[], updatedNote: Note) {
     });
 }
 
+export function formatSpaces(text: string) {
+    return text.replace(/\s+/g, ' ')
+}
+
 export function getNoteTagList(note: Note) {
-    const noteTitleTagList = note.title.split(' ').filter(isTag);
-    const noteContentTagList = note.content.split(' ').filter(isTag);
+    const noteTitle = formatSpaces(note.title);
+    const noteContent = formatSpaces(note.content);
+    const noteTitleTagList = noteTitle
+        .split(' ')
+        .filter(isTag);
+    const noteContentTagList = noteContent
+        .split(' ')
+        .filter(isTag);
+    
     const noteTagList = [...noteTitleTagList, ...noteContentTagList];
     return noteTagList.filter((tag, index) => noteTagList.indexOf(tag) === index);
 }
