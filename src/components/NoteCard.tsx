@@ -61,8 +61,8 @@ export default function NoteCard({
                 <TagList tagList={noteTagList} onRemoveTagClick={onRemoveNoteTagClick} />
             }
             <div className="note-card-tools">
-                <button className="button-edit" onClick={() => onEditNote(note)}>edit</button>
-                <button className="button-delete" onClick={() => onRemoveNote(note)}>delete</button>
+                <button type="button" className="button-edit" onClick={() => onEditNote(note)}>edit</button>
+                <button type="button" className="button-delete" onClick={() => onRemoveNote(note)}>delete</button>
             </div>
         </div>
     )

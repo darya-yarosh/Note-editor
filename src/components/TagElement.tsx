@@ -22,7 +22,7 @@ export default function TagElement({
     return (
         <span key={tag} className={`tag ${onTagClick ? "clickable" : null}`}>
             <label onClick={()=>handleTagClick(tag)}>{tag}</label>
-            <button onClick={() => onRemoveTagClick(tag)}>&times;</button>
+            <button type="button" onClick={() => onRemoveTagClick(tag)}>&times;</button>
         </span>
     )
 }

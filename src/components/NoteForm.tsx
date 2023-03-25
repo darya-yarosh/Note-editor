@@ -106,7 +106,7 @@ export default function NoteForm({
                 </div>
             </section>
             <section className="note-form-tools">
-                <button className="submit-button"
+                <button type="submit" className="submit-button"
                     onClick={(event) => { }}
                 >
                     Save
